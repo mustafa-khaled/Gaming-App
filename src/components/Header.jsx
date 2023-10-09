@@ -38,11 +38,10 @@ function Header() {
         <ul
           className={`fixed ${
             showSidebar ? "right-0" : "right-[-300px]"
-          } transition-right top-[80px] z-50 
-          flex h-[calc(100vh-80px)] w-[300px] flex-col items-center justify-center gap-[40px] border-t
+          } transition-right top-[80px] z-50 flex h-[calc(100vh-80px)] w-[300px] flex-col
+          items-center justify-center gap-[40px] border-t
           border-secondary bg-pri duration-300
-           md:static md:h-auto md:flex-row md:gap-[20px]
-          md:border-none md:bg-transparent`}
+          md:static md:h-auto md:flex-row md:border-none md:bg-transparent`}
         >
           {headerLinksData?.map((link) => {
             return (
