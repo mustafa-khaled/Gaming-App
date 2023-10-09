@@ -1,5 +1,11 @@
+import HeroSection from "../components/home/HeroSection";
+
 function Home() {
-  return <div className="bg-red-400  p-[10px]">Home</div>;
+  return (
+    <div className="px-[10px]">
+      <HeroSection />
+    </div>
+  );
 }
 
 export default Home;

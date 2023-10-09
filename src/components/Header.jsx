@@ -38,12 +38,11 @@ function Header() {
         <ul
           className={`fixed ${
             showSidebar ? "right-0" : "right-[-300px]"
-          } transition-right border-secondary top-[80px] 
-          z-50 flex h-[calc(100vh-80px)] w-[300px] flex-col items-center justify-center gap-[40px]
-          border bg-pri duration-300
+          } transition-right top-[80px] z-50 
+          flex h-[calc(100vh-80px)] w-[300px] flex-col items-center justify-center gap-[40px] border-t
+          border-secondary bg-pri duration-300
            md:static md:h-auto md:flex-row md:gap-[20px]
-          md:bg-transparent
-          `}
+          md:border-none md:bg-transparent`}
         >
           {headerLinksData?.map((link) => {
             return (
@@ -57,10 +56,14 @@ function Header() {
         </ul>
 
         <div
-          className="block md:hidden"
+          className="block w-[25px] md:hidden"
           onClick={() => setShowSidebar((prev) => !prev)}
         >
-          <i className="fa-solid fa-bars"></i>
+          <i
+            className={`fa-solid ${
+              showSidebar ? "fa-xmark" : "fa-bars"
+            }  text-lg hover:text-purple`}
+          ></i>
         </div>
       </div>
     </div>

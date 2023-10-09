@@ -1,3 +1,7 @@
+import slide1 from "../assets/slide1.png";
+import slide2 from "../assets/Rectangle 153.png";
+import slide3 from "../assets/Rectangle 225.png";
+
 export const headerLinksData = [
   {
     id: 1,
@@ -23,3 +27,5 @@ export const headerLinksData = [
     to: "/games",
   },
 ];
+
+export const sliderImages = [slide1, slide2, slide3];

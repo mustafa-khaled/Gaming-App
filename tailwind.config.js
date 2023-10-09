@@ -7,6 +7,7 @@ export default {
         pri: "#191523",
         textColor: "#fff",
         secondary: "#0e0b22",
+        purple: "#3a0563",
       },
     },
   },
