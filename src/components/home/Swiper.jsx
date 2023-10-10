@@ -7,7 +7,7 @@ import "swiper/css";
 function Swiper() {
   return (
     <ReactSwiper
-      className="grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))]"
+      className="mb-[50px] grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))]"
       spaceBetween={30}
       breakpoints={{
         400: {
@@ -33,10 +33,10 @@ function Swiper() {
       {swiperContent.map((el) => (
         <SwiperSlide
           key={el.id}
-          className={`px-[20px] bg-[${el.backgroundColor}] flex h-[200px] items-center gap-[20px]
-          rounded-xl`}
+          style={{ backgroundColor: el.backgroundColor }}
+          className="flex h-[200px] items-center gap-[20px] rounded-xl px-[20px]"
         >
-          <img src={el.image} alt="imag" className=" w-[50px]" />
+          <img src={el.image} alt="imag" className="w-[50px]" />
           <img src={el.avatar} alt="avatar" className="w-[100px]" />
         </SwiperSlide>
       ))}

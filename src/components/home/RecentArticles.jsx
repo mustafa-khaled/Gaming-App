@@ -1,4 +1,4 @@
-import { recentArticlesData } from "../../data/data";
+import { articlesData } from "../../data/data";
 import Img from "../Img";
 
 function RecentArticles() {
@@ -10,7 +10,7 @@ function RecentArticles() {
       </div>
 
       <div>
-        {recentArticlesData.map((el) => (
+        {articlesData.map((el) => (
           <div key={el.id} className="mt-[20px] flex items-start gap-[20px]">
             <div className="w-[100px]">
               <Img

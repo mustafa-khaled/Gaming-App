@@ -25,7 +25,7 @@ function Header() {
   }, []);
 
   return (
-    <div
+    <header
       className={`flex h-[80px] items-center justify-center bg-transparent px-[20px] text-textColor
        ${isHeaderFixed && "fixed-header"}`}
     >
@@ -65,7 +65,7 @@ function Header() {
           ></i>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 

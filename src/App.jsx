@@ -5,6 +5,8 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 
+import Games from "./pages/Games";
+
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +15,7 @@ function App() {
       <Routes>
         <Route index element={<Home replace to="home" />} />
         <Route path="home" element={<Home />} />
+        <Route path="games" element={<Games />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

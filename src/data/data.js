@@ -4,10 +4,10 @@ import slide3 from "../assets/Rectangle 225.png";
 
 // Articles Images
 import articlesImg1 from "../assets/Rectangle 225.png";
-import articlesImg2 from "../assets/Rectangle 190.png";
-import articlesImg3 from "../assets/Rectangle 168.png";
-import articlesImg4 from "../assets/Rectangle 153 (1).png";
-import articlesImg5 from "../assets/Rectangle 194.png";
+import articlesImg2 from "../assets/article2.png";
+import articlesImg3 from "../assets/article3.png";
+import articlesImg4 from "../assets/article5.png";
+import articlesImg5 from "../assets/article6.png";
 
 // Avatars
 import avatar1 from "../assets/avatar1.png";
@@ -20,6 +20,8 @@ import avatarText2 from "../assets/avatarTex2.png";
 import avatarText3 from "../assets/avatarTex3.png";
 import avatarText4 from "../assets/avatarTex4.png";
 
+export const sliderImages = [slide1, slide2, slide3];
+
 export const headerLinksData = [
   {
     id: 1,
@@ -29,8 +31,8 @@ export const headerLinksData = [
 
   {
     id: 2,
-    title: "Creators",
-    to: "/creators",
+    title: "Games",
+    to: "/games",
   },
 
   {
@@ -41,14 +43,12 @@ export const headerLinksData = [
 
   {
     id: 4,
-    title: "Games",
-    to: "/games",
+    title: "Creators",
+    to: "/creators",
   },
 ];
 
-export const sliderImages = [slide1, slide2, slide3];
-
-export const recentArticlesData = [
+export const articlesData = [
   {
     id: 1,
     title: "Why Cypher Joined Protocol Sight.",
