@@ -3,7 +3,7 @@ import Slider from "./Slider";
 
 function HeroSection() {
   return (
-    <div className="flex h-[100vh] flex-col items-start gap-[20px] md:flex-row">
+    <div className="mb-[50px] flex flex-col items-start gap-[20px] md:flex-row">
       <Slider />
       <RecentArticles />
     </div>

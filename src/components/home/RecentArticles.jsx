@@ -3,7 +3,7 @@ import Img from "../Img";
 
 function RecentArticles() {
   return (
-    <div className="w-full  text-textColor md:w-[400px]">
+    <div className="w-full  text-textColor md:w-[450px]">
       <div className="flex items-center gap-[20px]">
         <i className="fa-solid fa-bullseye"></i>
         <h3 className="font-semibold uppercase">Recent Articles</h3>
