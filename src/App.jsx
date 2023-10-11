@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
-
 import Games from "./pages/Games";
 
 function App() {

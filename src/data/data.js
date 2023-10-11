@@ -3,11 +3,12 @@ import slide2 from "../assets/Rectangle 153.png";
 import slide3 from "../assets/Rectangle 225.png";
 
 // Articles Images
-import articlesImg1 from "../assets/Rectangle 225.png";
+import articlesImg1 from "../assets/article1.png";
 import articlesImg2 from "../assets/article2.png";
 import articlesImg3 from "../assets/article3.png";
-import articlesImg4 from "../assets/article5.png";
-import articlesImg5 from "../assets/article6.png";
+import articlesImg4 from "../assets/articel4.png";
+import articlesImg5 from "../assets/article5.png";
+import articlesImg6 from "../assets/article6.png";
 
 // Avatars
 import avatar1 from "../assets/avatar1.png";
@@ -70,19 +71,19 @@ export const articlesData = [
   {
     id: 4,
     title: "Why Cypher Joined Protocol Sight.",
-    image: slide1,
+    image: articlesImg4,
   },
 
   {
     id: 5,
     title: "Why Cypher Joined Protocol Sight.",
-    image: articlesImg4,
+    image: articlesImg5,
   },
 
   {
     id: 6,
     title: "Why Cypher Joined Protocol Sight.",
-    image: articlesImg5,
+    image: articlesImg6,
   },
 ];
 
@@ -142,4 +143,10 @@ export const swiperContent = [
     image: avatarText4,
     avatar: avatar4,
   },
+];
+
+export const specialArticleData = [
+  { id: 1, articleTitle: "The best gun buddies in Valorant." },
+  { id: 2, articleTitle: "how to log out of wild rift and league of legends." },
+  { id: 3, articleTitle: "Why Cypher Joined Protocol Sight." },
 ];
