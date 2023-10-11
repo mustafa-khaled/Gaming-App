@@ -5,7 +5,7 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Games from "./pages/Games";
-import GameSingle from "./pages/GameSingle";
+import GameSingle from "./components/games/GameSingle";
 
 function App() {
   return (

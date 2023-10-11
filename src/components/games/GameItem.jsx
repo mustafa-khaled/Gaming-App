@@ -1,18 +1,10 @@
 import { Link } from "react-router-dom";
-import Img from "../Img";
 import { formatDate } from "../../utils/helpers";
 
+import Img from "../Img";
+
 function GameItem({ game }) {
-  const {
-    name,
-    background_image,
-    id,
-    released,
-    updated,
-    rating,
-    ratings_count,
-    genres,
-  } = game;
+  const { name, background_image, id, released, genres } = game;
 
   return (
     <div className="text-sm text-gray-400">
@@ -42,6 +34,7 @@ function GameItem({ game }) {
           );
         })}
       </div>
+      <div></div>
     </div>
   );
 }

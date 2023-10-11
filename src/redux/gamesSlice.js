@@ -5,7 +5,7 @@ const initialState = {
   games: [],
   gamesSingle: {},
   loading: false,
-  error: null,
+  error: false,
 };
 
 const gameSlice = createSlice({
@@ -23,8 +23,9 @@ const gameSlice = createSlice({
       state.loading = false;
     });
 
-    builder.addCase(fetchAsyncGames.rejected, (state) => {
-      state.error = "Failed To Fetch Data.";
+    builder.addCase(fetchAsyncGames.rejected, (state, action) => {
+      state.error = true;
+      state.loading = false;
     });
 
     builder.addCase(fetchAsyncGameDetails.pending, (state) => {
@@ -36,8 +37,9 @@ const gameSlice = createSlice({
       state.loading = false;
     });
 
-    builder.addCase(fetchAsyncGameDetails.rejected, (state) => {
-      state.error = "Failed To Fetch Data.";
+    builder.addCase(fetchAsyncGameDetails.rejected, (state, action) => {
+      state.error = true;
+      state.loading = false;
     });
   },
 });
