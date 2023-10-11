@@ -44,7 +44,7 @@ const gameSlice = createSlice({
 
 export const selectAllGames = (state) => state.games.games.results;
 export const selectGamesSingle = (state) => state.games.gamesSingle;
-export const selectLoading = (state) => state.games.loading;
-export const selectError = (state) => state.games.error;
+export const gamesLoading = (state) => state.games.loading;
+export const gamesError = (state) => state.games.error;
 
 export default gameSlice.reducer;

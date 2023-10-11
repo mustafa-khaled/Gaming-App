@@ -29,7 +29,7 @@ const genreSlice = createSlice({
 });
 
 export const selectAllGenres = (state) => state.genre.genres.results;
-export const loading = (state) => state.genre.loading;
-export const error = (state) => state.genre.error;
+export const genresLoading = (state) => state.genre.loading;
+export const genresError = (state) => state.genre.error;
 
 export default genreSlice.reducer;
