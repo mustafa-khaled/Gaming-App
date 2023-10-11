@@ -6,7 +6,7 @@ import {
   gamesLoading,
   selectAllGames,
 } from "../../redux/gamesSlice";
-import Game from "./Game";
+import GameItem from "./GameItem";
 import Loader from "../loader/Loader";
 
 function GamesList() {
@@ -26,9 +26,12 @@ function GamesList() {
   if (loading) return <Loader />;
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-[10px]">
+    <div
+      className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[20px]
+    md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
+    >
       {games?.map((g) => {
-        return <Game key={g?.id} game={g} />;
+        return <GameItem key={g?.id} game={g} />;
       })}
     </div>
   );
