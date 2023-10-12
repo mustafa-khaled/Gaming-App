@@ -1,11 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchAsyncGenres } from "./utils/genreUtils";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { API_KEY, BASE_URL } from "../../constants/api";
+import axios from "axios";
 
 const initialState = {
   genres: [],
   loading: false,
   error: null,
 };
+
+export const fetchAsyncGenres = createAsyncThunk(
+  "genres/fetch",
+  async (page = 1) => {
+    const { data } = await axios.get(
+      `${BASE_URL}genres?key=${API_KEY}&page=${page}`,
+    );
+    return data.results;
+  },
+);
 
 const genreSlice = createSlice({
   name: "genre",
@@ -28,7 +39,7 @@ const genreSlice = createSlice({
   },
 });
 
-export const selectAllGenres = (state) => state.genre.genres.results;
+export const selectAllGenres = (state) => state.genre.genres;
 export const genresLoading = (state) => state.genre.loading;
 export const genresError = (state) => state.genre.error;
 

@@ -1,11 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchAsyncCreators } from "./utils/creatorUtils";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { API_KEY, BASE_URL } from "../../constants/api";
+import axios from "axios";
 
 const initialState = {
   creators: [],
   loading: false,
   error: null,
 };
+
+export const fetchAsyncCreators = createAsyncThunk(
+  "developers/fetch",
+  async (page = 1) => {
+    const { data } = await axios.get(
+      `${BASE_URL}creators?key=${API_KEY}&page=${page}`,
+    );
+    return data.results;
+  },
+);
 
 const creatorSlice = createSlice({
   name: "creator",
@@ -28,8 +39,7 @@ const creatorSlice = createSlice({
   },
 });
 
-export const selectAllCreators = (state) => state.creators.creators.results;
-
+export const selectAllCreators = (state) => state.creators.creators;
 export const creatorsLoading = (state) => state.creators.loading;
 export const creatorsError = (state) => state.creators.error;
 

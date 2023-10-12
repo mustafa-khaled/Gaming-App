@@ -1,22 +1,39 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchAsyncGameDetails } from "../../redux/utils/gameUtil";
-import { selectGamesSingle, gamesLoading } from "../../redux/gamesSlice";
+import {
+  fetchAsyncGameDetails,
+  gameDetailsData,
+  gameDetailsLoading,
+} from "../../redux/features/games/gameDetailsSlice";
+import { formatDate } from "../../utils/helpers";
+import {
+  allScreenshots,
+  fetchAsyncGameScreenshots,
+  screenshotsLoading,
+} from "../../redux/features/games/gameScreenshotsSlice";
+
 import Loader from "../loader/Loader";
 import Empty from "../Empty";
-
 import Img from "../Img";
-import { formatDate } from "../../utils/helpers";
 
 function GameSingle() {
-  const [showAllDesc, setShowAllDesc] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
-  const game = useSelector(selectGamesSingle);
-  const loading = useSelector(gamesLoading);
+
+  // State To Limit Description well show on screen
+  const [showAllDesc, setShowAllDesc] = useState(false);
+  // Display specific Image onClick
+  const [mainImage, setMainImage] = useState(null);
+
+  const game = useSelector(gameDetailsData);
+  const screenshots = useSelector(allScreenshots);
+  const gameLoading = useSelector(gameDetailsLoading);
+  const shotsLoading = useSelector(screenshotsLoading);
+
   useEffect(() => {
     dispatch(fetchAsyncGameDetails(id));
+    dispatch(fetchAsyncGameScreenshots(id));
   }, [dispatch, id]);
 
   const {
@@ -29,20 +46,36 @@ function GameSingle() {
     developers,
   } = game;
 
-  if (loading) return <Loader />;
+  if (gameLoading || shotsLoading) return <Loader />;
 
   if (!id) return <Empty message={"Failed To Fetch Game Data."} />;
 
-  console.log(game);
+  const displayImage = mainImage || background_image;
 
   return (
     <div className="container mx-auto flex min-h-[120vh] flex-col items-start gap-[20px] px-[20px] pb-[20px] md:flex-row">
       <div className="w-full md:w-[50%]">
         <Img
-          src={background_image}
+          src={displayImage}
           alt={name}
-          styles="w-full rounded-xl object-cover border-[5px] border-purple"
+          styles="w-full rounded-xl object-cover"
+          onClick={() => setMainImage(background_image)}
         />
+        <h2 className="my-[10px] text-textColor">Screenshots:</h2>
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-[20px]">
+          {screenshots?.length > 0 &&
+            screenshots?.map((s) => {
+              return (
+                <Img
+                  src={s.image}
+                  alt={name}
+                  key={s.id}
+                  styles="w-full rounded-xl object-cover border-[2px] border-purple"
+                  onClick={() => setMainImage(s.image)}
+                />
+              );
+            })}
+        </div>
       </div>
 
       <div className="flex w-full flex-col  gap-[10px] text-sm text-gray-400 md:w-[50%]">

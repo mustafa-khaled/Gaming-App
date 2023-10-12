@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchAsyncStores, fetchAsyncStoresDetails } from "./utils/storesUtils";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { API_KEY, BASE_URL } from "../../constants/api";
+import axios from "axios";
 
 const initialState = {
   stores: [],
@@ -7,6 +8,19 @@ const initialState = {
   storesSingle: [],
   error: null,
 };
+
+export const fetchAsyncStores = createAsyncThunk("stores/fetch", async () => {
+  const { data } = await axios.get(`${BASE_URL}stores?key=${API_KEY}`);
+  return data.results;
+});
+
+export const fetchAsyncStoresDetails = createAsyncThunk(
+  "stores/details/fetch",
+  async (id) => {
+    const { data } = await axios.get(`${BASE_URL}stores/${id}?key${API_KEY}`);
+    return data;
+  },
+);
 
 const storeSlice = createSlice({
   name: "stores",
@@ -41,7 +55,7 @@ const storeSlice = createSlice({
   reducers: {},
 });
 
-export const selectAllStores = (state) => state.stores.stores.results;
+export const selectAllStores = (state) => state.stores.stores;
 export const selectAllStoresStatus = (state) => state.store.storesStatus;
 export const selectSingleStore = (state) => state.store.storesSingle;
 export const selectSingleStoreStatus = (state) =>

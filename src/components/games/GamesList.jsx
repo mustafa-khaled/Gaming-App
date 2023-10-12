@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAsyncGames } from "../../redux/utils/gameUtil";
 import {
-  gamesError,
+  allGames,
   gamesLoading,
-  selectAllGames,
-} from "../../redux/gamesSlice";
+  gamesError,
+  fetchAsyncGames,
+} from "../../redux/features/games/gamesSlice";
+
 import GameItem from "./GameItem";
 import Loader from "../loader/Loader";
 import Empty from "../Empty";
@@ -14,15 +15,13 @@ function GamesList() {
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
-  const games = useSelector(selectAllGames);
+  const games = useSelector(allGames);
   const loading = useSelector(gamesLoading);
   const error = useSelector(gamesError);
 
   useEffect(() => {
     dispatch(fetchAsyncGames(page));
   }, [page, dispatch]);
-
-  const pageHandler = (pageValue) => setPage(pageValue);
 
   if (loading) return <Loader />;
 
