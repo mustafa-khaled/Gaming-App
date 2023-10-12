@@ -5,7 +5,7 @@ import {
   gamesLoading,
   gamesError,
   fetchAsyncGames,
-} from "../../redux/features/games/gamesSlice";
+} from "../../redux/features/gamesSlice";
 
 import GameItem from "./GameItem";
 import Loader from "../loader/Loader";

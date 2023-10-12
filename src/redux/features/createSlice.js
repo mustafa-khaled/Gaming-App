@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { API_KEY, BASE_URL } from "../../constants/api";
-import axios from "axios";
+import { fetchDataFromApi } from "../../utils/api";
 
 const initialState = {
   creators: [],
@@ -11,9 +10,7 @@ const initialState = {
 export const fetchAsyncCreators = createAsyncThunk(
   "developers/fetch",
   async (page = 1) => {
-    const { data } = await axios.get(
-      `${BASE_URL}creators?key=${API_KEY}&page=${page}`,
-    );
+    const data = await fetchDataFromApi(`creators`, page);
     return data.results;
   },
 );

@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { API_KEY, BASE_URL } from "../../constants/api";
-import axios from "axios";
+import { fetchDataFromApi } from "../../utils/api";
 
 const initialState = {
   genres: [],
@@ -11,9 +10,7 @@ const initialState = {
 export const fetchAsyncGenres = createAsyncThunk(
   "genres/fetch",
   async (page = 1) => {
-    const { data } = await axios.get(
-      `${BASE_URL}genres?key=${API_KEY}&page=${page}`,
-    );
+    const data = await fetchDataFromApi(`genres`, page);
     return data.results;
   },
 );
