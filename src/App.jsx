@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Header from "./components/Header";
 import Games from "./pages/Games";
 import GameSingle from "./components/games/GameSingle";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="games/:id" element={<GameSingle />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

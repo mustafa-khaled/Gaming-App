@@ -1,6 +1,7 @@
 import Swiper from "../components/home/Swiper";
 import HeroSection from "../components/home/HeroSection";
 import LatestArticles from "../components/home/LatestArticles";
+import OurTeam from "../components/home/OurTeam";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <HeroSection />
       <Swiper />
       <LatestArticles />
+      <OurTeam />
     </div>
   );
 }

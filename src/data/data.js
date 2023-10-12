@@ -21,6 +21,12 @@ import avatarText2 from "../assets/avatarTex2.png";
 import avatarText3 from "../assets/avatarTex3.png";
 import avatarText4 from "../assets/avatarTex4.png";
 
+import teamPerson1 from "../assets/person1.png";
+import teamPerson2 from "../assets/person2.png";
+import teamPerson3 from "../assets/person3.png";
+import teamPerson4 from "../assets/person4.png";
+import teamPerson5 from "../assets/person5.png";
+
 export const sliderImages = [slide1, slide2, slide3];
 
 export const headerLinksData = [
@@ -149,4 +155,17 @@ export const specialArticleData = [
   { id: 1, articleTitle: "The best gun buddies in Valorant." },
   { id: 2, articleTitle: "how to log out of wild rift and league of legends." },
   { id: 3, articleTitle: "Why Cypher Joined Protocol Sight." },
+];
+
+export const ourTeamData = [
+  { id: 1, title: "professional", image: teamPerson1, name: "Emilia Clarke" },
+  { id: 2, title: "professional", image: teamPerson2, name: "Tom Hanks" },
+  { id: 3, title: "professional", image: teamPerson3, name: "Emma Watson" },
+  { id: 4, title: "professional", image: teamPerson4, name: "Bonnie Wright" },
+  {
+    id: 5,
+    title: "professional",
+    image: teamPerson5,
+    name: "Daniel Radcliffe",
+  },
 ];

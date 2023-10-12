@@ -6,7 +6,7 @@ function SpecialArticle({ articleIndex }) {
 
   return (
     <div className="w-full text-center md:w-[35%]">
-      <Img src={image} alt={title} styles="rounded-xl w-full" />
+      <Img src={image} alt={title} styles="w-full" />
       <div>
         <span className="mr-[10px] text-purple">Alex Gordon</span>
         <span className="text-gray-400">23 Dec,2022</span>

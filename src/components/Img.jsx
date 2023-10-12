@@ -7,7 +7,7 @@ const Img = ({ src, alt, styles, onClick }) => {
       onClick={onClick}
       src={src}
       alt={alt}
-      className={styles}
+      className={`${styles} rounded-xl`}
       effect="blur"
     />
   );

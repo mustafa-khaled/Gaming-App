@@ -16,7 +16,7 @@ function RecentArticles() {
               <Img
                 src={el.image}
                 alt={el.title}
-                styles="w-full object-cover h-full rounded-xl"
+                styles="w-full object-cover h-full"
               />
             </div>
             <div className="text-xs">

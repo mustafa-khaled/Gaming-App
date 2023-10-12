@@ -15,7 +15,7 @@ function LatestArticles() {
 
       <div className="mb-[30px] flex flex-col items-start gap-[20px] md:flex-row">
         <div className="w-full md:w-[50%]">
-          <Img src={mainImage} styles="rounded-xl w-full h-full" />
+          <Img src={mainImage} styles="w-full h-full" />
         </div>
         <div className="w-full md:w-[50%]">
           <div className="text-sm">
@@ -50,7 +50,7 @@ function LatestArticles() {
                 }}
                 className="cursor-pointer"
               >
-                <Img src={el.image} alt={el.title} styles="rounded-xl w-full" />
+                <Img src={el.image} alt={el.title} styles="w-full" />
                 <h3 className="my-[5px] text-xl uppercase">{el.title}</h3>
                 <div>
                   <span className="mr-[10px] text-purple">Alex Gordon</span>
