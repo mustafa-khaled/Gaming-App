@@ -1,24 +1,11 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import { footerData } from "../data/data";
 
-const menuData = [
-  {
-    title: "Web Site",
-    items: ["Home", "About Us", "Contact"],
-  },
-  {
-    title: "Categories",
-    items: ["Fortnite", "Valorant", "Minecraft", "Apex Legend"],
-  },
-  {
-    title: "Links",
-    items: ["GitHub", "LinkedIn"],
-  },
-];
+import logo from "../assets/logo.png";
 
 function Footer() {
   return (
-    <div className="mt-[30px] bg-pri  text-textColor">
+    <div className="mt-[50px] bg-pri  text-textColor">
       <div
         className="container mx-auto grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[20px] px-[10px]
          py-[30px] md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]"
@@ -33,11 +20,13 @@ function Footer() {
           </p>
         </div>
 
-        {menuData.map((menu, index) => (
+        {footerData.map((menu, index) => (
           <ul key={index}>
             <li className="text-purple">{menu.title}</li>
             {menu.items.map((item, subIndex) => (
-              <li className="text-sm">{item}</li>
+              <li className="text-sm" key={subIndex}>
+                {item}{" "}
+              </li>
             ))}
           </ul>
         ))}

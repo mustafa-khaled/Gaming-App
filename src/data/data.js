@@ -27,6 +27,10 @@ import teamPerson3 from "../assets/person3.png";
 import teamPerson4 from "../assets/person4.png";
 import teamPerson5 from "../assets/person5.png";
 
+import newsImage1 from "../assets/news1.png";
+import newsImage2 from "../assets/news2.png";
+import newsImage3 from "../assets/news3.png";
+
 export const sliderImages = [slide1, slide2, slide3];
 
 export const headerLinksData = [
@@ -167,5 +171,40 @@ export const ourTeamData = [
     title: "professional",
     image: teamPerson5,
     name: "Daniel Radcliffe",
+  },
+];
+
+export const footerData = [
+  {
+    title: "Web Site",
+    items: ["Home", "About Us", "Contact"],
+  },
+  {
+    title: "Categories",
+    items: ["Fortnite", "Valorant", "Minecraft", "Apex Legend"],
+  },
+  {
+    title: "Links",
+    items: ["GitHub", "LinkedIn"],
+  },
+];
+
+export const latestNewsData = [
+  {
+    id: 1,
+    image: newsImage1,
+    title: "Competitive gaming is full in2022!",
+  },
+
+  {
+    id: 2,
+    image: newsImage2,
+    title: "Competitive gaming is full in2022!",
+  },
+
+  {
+    id: 3,
+    image: newsImage3,
+    title: "Best studio for eSport Gaming!",
   },
 ];
