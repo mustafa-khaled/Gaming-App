@@ -29,8 +29,9 @@ function StoresList() {
 
   return (
     <div
-      className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[20px]
-    pb-[20px] md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
+      className="grid 
+      grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[20px] pb-[20px]
+ md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
     >
       {stores?.length > 0 &&
         stores?.map((s) => {

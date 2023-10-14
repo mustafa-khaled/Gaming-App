@@ -24,8 +24,8 @@ function Footer() {
           <ul key={index}>
             <li className="text-purple">{menu.title}</li>
             {menu.items.map((item, subIndex) => (
-              <li className="text-sm" key={subIndex}>
-                {item}{" "}
+              <li className="mb-[5px] text-sm" key={subIndex}>
+                {item}
               </li>
             ))}
           </ul>

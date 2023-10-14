@@ -9,6 +9,9 @@ import GameSingle from "./components/games/GameSingle";
 import Footer from "./components/Footer";
 import Stores from "./pages/Stores";
 import StorySingle from "./components/stores/StorySingle";
+import Creators from "./pages/Creators";
+
+import CreatorSingle from "./components/creators/CreatorSingle";
 
 function App() {
   return (
@@ -22,7 +25,8 @@ function App() {
         <Route path="games/:id" element={<GameSingle />} />
         <Route path="stores" element={<Stores />} />
         <Route path="story/:id" element={<StorySingle />} />
-
+        <Route path="creators" element={<Creators />} />
+        <Route path="creator/:id" element={<CreatorSingle />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

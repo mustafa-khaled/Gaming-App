@@ -9,15 +9,16 @@ function StoryItem({ story }) {
       <Img
         src={image_background}
         alt={name}
-        styles="md:w-[300px] w-[250px] object-cover h-[200px]"
+        styles="md:w-[300px] w-[300px] object-cover h-[200px]"
       />
-
-      <Link
-        className="text-lg uppercase text-textColor hover:text-gray-400"
-        to={`/story/${id}`}
-      >
-        {name}
-      </Link>
+      <div>
+        <Link
+          className="text-lg uppercase text-textColor hover:text-gray-400"
+          to={`/story/${id}`}
+        >
+          {name}
+        </Link>
+      </div>
     </div>
   );
 }

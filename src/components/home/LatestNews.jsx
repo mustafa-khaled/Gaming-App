@@ -15,7 +15,7 @@ function LatestNews() {
         <div className="mx-auto flex min-h-[60vh] w-full flex-col items-center justify-around gap-[20px] sm:flex-row md:w-[70%]">
           {latestNewsData.map((el) => {
             return (
-              <div key={el.id} className="rounded-xl bg-[#7931DE]">
+              <div key={el.id} className="rounded-xl bg-secondary">
                 <Img src={el.image} alt={el.title} styles="w-full" />
                 <h3 className="pb-[10px] pl-[5px] text-lg">{el.title}</h3>
               </div>
