@@ -4,6 +4,7 @@ import { stripHtmlTags } from "../../utils/helpers";
 
 import Loader from "../loader/Loader";
 import Img from "../Img";
+import Empty from "../Empty";
 
 function StorySingle() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ function StorySingle() {
   if (loading) return <Loader />;
   const { image_background, name, domain, description } = data || {};
 
-  return (
+  return data?.id ? (
     <div className="container mx-auto min-h-[80vh] px-[20px] pb-[20px] text-textColor">
       <div className="flex flex-col items-start gap-[20px] md:flex-row">
         <div className="w-full md:w-[50%]">
@@ -34,6 +35,8 @@ function StorySingle() {
         </div>
       </div>
     </div>
+  ) : (
+    <Empty message="Story Not Found" />
   );
 }
 

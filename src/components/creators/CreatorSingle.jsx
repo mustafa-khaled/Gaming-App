@@ -5,6 +5,7 @@ import { stripHtmlTags } from "../../utils/helpers";
 import noUser from "../../assets/noUser.png";
 import Loader from "../loader/Loader";
 import Img from "../Img";
+import Empty from "../Empty";
 
 function CreatorSingle() {
   const { id } = useParams();
@@ -13,7 +14,9 @@ function CreatorSingle() {
   if (loading) return <Loader />;
   const { image, name, description } = data || {};
 
-  return (
+  console.log(data);
+
+  return data?.id ? (
     <div className="container mx-auto min-h-[100vh] px-[20px] pb-[20px] text-textColor">
       <div className="flex flex-col items-start gap-[20px] md:flex-row">
         <div className="w-full md:w-[50%]">
@@ -27,6 +30,8 @@ function CreatorSingle() {
         </div>
       </div>
     </div>
+  ) : (
+    <Empty message="Creator Not Found" />
   );
 }
 
