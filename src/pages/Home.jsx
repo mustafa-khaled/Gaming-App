@@ -1,15 +1,15 @@
-import Swiper from "../components/home/Swiper";
 import HeroSection from "../components/home/HeroSection";
 import LatestArticles from "../components/home/LatestArticles";
 import OurTeam from "../components/home/OurTeam";
 import LatestNews from "../components/home/LatestNews";
+import HomeSwiper from "../components/home/HomeSwiper";
 
 function Home() {
   return (
     <div>
       <div className="container mx-auto px-[10px]">
         <HeroSection />
-        <Swiper />
+        <HomeSwiper />
         <LatestArticles />
         <OurTeam />
       </div>

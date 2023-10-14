@@ -97,7 +97,7 @@ export const articlesData = [
   },
 ];
 
-export const swiperContent = [
+export const homeSwiperContent = [
   {
     id: 1,
     backgroundColor: "#FF4655",
