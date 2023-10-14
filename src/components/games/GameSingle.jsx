@@ -58,10 +58,10 @@ function GameSingle() {
   const displayImage = mainImage || background_image;
 
   return (
-    <div className="container mx-auto min-h-[120vh] px-[20px] pb-[20px] ">
+    <div className="container mx-auto min-h-[120vh] px-[20px] pb-[20px]">
       <div className="flex flex-col items-start gap-[20px] md:flex-row">
-        <div className="relative w-full md:w-[50%] ">
-          <Img src={displayImage} alt={name} styles="w-full object-cover " />
+        <div className="relative w-full md:w-[50%]">
+          <Img src={displayImage} alt={name} styles="w-full object-cover" />
 
           {/* IF the main image not selected give option to do that */}
           {displayImage !== background_image && (

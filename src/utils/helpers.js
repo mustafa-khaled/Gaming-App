@@ -7,3 +7,8 @@ export const formatDate = (date) => {
 
   return formattedDate;
 };
+
+export const stripHtmlTags = (html) => {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  return doc.body.textContent || "";
+};

@@ -12,7 +12,7 @@ function GameItem({ game }) {
         <Img
           src={background_image}
           alt={name}
-          styles="md:w-[300px] w-[250px] object-cover h-[200px] rounded-xl"
+          styles="md:w-[300px] w-[250px] object-cover h-[200px]"
         />
       </div>
       <Link
