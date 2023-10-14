@@ -5,14 +5,12 @@ import { stripHtmlTags } from "../../utils/helpers";
 import noUser from "../../assets/noUser.png";
 import Loader from "../loader/Loader";
 import Img from "../Img";
-import { useSelector } from "react-redux";
 
 function CreatorSingle() {
   const { id } = useParams();
   const { data, loading } = useFetch(`creators/${id}`);
 
   if (loading) return <Loader />;
-
   const { image, name, description } = data || {};
 
   return (

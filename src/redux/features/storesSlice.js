@@ -8,10 +8,13 @@ const initialState = {
   error: null,
 };
 
-export const fetchAsyncStores = createAsyncThunk("stores/fetch", async () => {
-  const data = await fetchDataFromApi(`stores`);
-  return data.results;
-});
+export const fetchAsyncStores = createAsyncThunk(
+  "stores/fetch",
+  async (page = 1) => {
+    const data = await fetchDataFromApi(`stores`, page);
+    return data.results;
+  },
+);
 
 const storeSlice = createSlice({
   name: "stores",

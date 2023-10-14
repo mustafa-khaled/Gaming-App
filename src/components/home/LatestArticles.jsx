@@ -11,7 +11,9 @@ function LatestArticles() {
   return (
     <div className="mb-[50px] text-textColor">
       {/* Head Section */}
-      <SectionHead title="Latest Articles" />
+      <div className="mb-[30px]">
+        <SectionHead title="Latest Articles" />
+      </div>
 
       <div className="mb-[30px] flex flex-col items-start gap-[20px] md:flex-row">
         <div className="w-full md:w-[50%]">

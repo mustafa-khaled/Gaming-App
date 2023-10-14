@@ -10,7 +10,6 @@ import Footer from "./components/Footer";
 import Stores from "./pages/Stores";
 import StorySingle from "./components/stores/StorySingle";
 import Creators from "./pages/Creators";
-
 import CreatorSingle from "./components/creators/CreatorSingle";
 
 function App() {

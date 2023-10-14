@@ -11,7 +11,9 @@ function LatestNews() {
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="container mx-auto px-[10px] py-[30px] text-textColor">
-        <SectionHead title="Latest News" />
+        <div className="mb-[30px]">
+          <SectionHead title="Latest News" />
+        </div>
         <div className="mx-auto flex min-h-[60vh] w-full flex-col items-center justify-around gap-[20px] sm:flex-row md:w-[70%]">
           {latestNewsData.map((el) => {
             return (

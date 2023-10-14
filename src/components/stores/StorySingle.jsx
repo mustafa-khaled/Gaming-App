@@ -10,7 +10,6 @@ function StorySingle() {
   const { data, loading } = useFetch(`stores/${id}`);
 
   if (loading) return <Loader />;
-
   const { image_background, name, domain, description } = data || {};
 
   return (

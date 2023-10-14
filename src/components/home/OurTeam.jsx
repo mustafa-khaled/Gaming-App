@@ -6,7 +6,9 @@ import SectionHead from "../SectionHead";
 function OurTeam() {
   return (
     <div className="mb-[50px] text-textColor ">
-      <SectionHead title="Our Team" />
+      <div className="mb-[30px]">
+        <SectionHead title="Our Team" />
+      </div>
       <div
         className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-[10px]
         md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"

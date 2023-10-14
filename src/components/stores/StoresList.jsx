@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchAsyncStores,
@@ -10,9 +10,9 @@ import {
 import StoryItem from "./StoryItem";
 import Loader from "../loader/Loader";
 import Empty from "../Empty";
+import SectionHead from "../SectionHead";
 
 function StoresList() {
-  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
   const stores = useSelector(selectAllStores);
@@ -20,23 +20,28 @@ function StoresList() {
   const error = useSelector(storyError);
 
   useEffect(() => {
-    dispatch(fetchAsyncStores(page));
-  }, [page, dispatch]);
+    dispatch(fetchAsyncStores());
+  }, [dispatch]);
 
   if (loading) return <Loader />;
-
   if (error) return <Empty message={"Failed To Fetch Stores Data."} />;
 
   return (
-    <div
-      className="grid 
+    <div>
+      <div className="mb-[30px]">
+        <SectionHead title="All Stores" />
+      </div>
+
+      <div
+        className="grid 
       grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[20px] pb-[20px]
  md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
-    >
-      {stores?.length > 0 &&
-        stores?.map((s) => {
-          return <StoryItem key={s.id} story={s} />;
-        })}
+      >
+        {stores?.length > 0 &&
+          stores?.map((s) => {
+            return <StoryItem key={s.id} story={s} />;
+          })}
+      </div>
     </div>
   );
 }
