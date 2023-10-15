@@ -12,7 +12,7 @@ function GameItem({ game }) {
         <Img
           src={background_image}
           alt={name}
-          styles="md:w-[300px] w-[250px] object-cover h-[200px]"
+          styles=" w-full object-cover h-[200px]"
         />
       </div>
       <Link
@@ -21,14 +21,14 @@ function GameItem({ game }) {
       >
         {name}
       </Link>
-      <div className="flex items-center gap-[10px]">
+      <div className="flex items-center gap-[5px]">
         <p>Release date: </p>
         <p>{formatDate(released)}</p>
       </div>
-      <div>
+      <div className="flex flex-wrap items-center">
         {genres.map((g) => {
           return (
-            <span key={g.id} className="mr-[5px] underline">
+            <span key={g.id} className="mr-[5px] block underline">
               {g.name}
             </span>
           );

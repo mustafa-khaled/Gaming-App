@@ -12,6 +12,7 @@ import Loader from "../loader/Loader";
 import Empty from "../Empty";
 import SectionHead from "../SectionHead";
 import Navigation from "../Navigation";
+import GridContainer from "../GridContainer";
 
 function GamesList() {
   const [page, setPage] = useState(1);
@@ -51,14 +52,11 @@ function GamesList() {
         />
       </div>
 
-      <div
-        className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[20px]
-    pb-[20px] md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
-      >
+      <GridContainer>
         {games?.map((g) => {
           return <GameItem key={g?.id} game={g} />;
         })}
-      </div>
+      </GridContainer>
     </div>
   );
 }

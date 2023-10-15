@@ -11,6 +11,7 @@ import StoryItem from "./StoryItem";
 import Loader from "../loader/Loader";
 import Empty from "../Empty";
 import SectionHead from "../SectionHead";
+import GridContainer from "../GridContainer";
 
 function StoresList() {
   const dispatch = useDispatch();
@@ -32,16 +33,12 @@ function StoresList() {
         <SectionHead title="All Stores" />
       </div>
 
-      <div
-        className="grid 
-      grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[20px] pb-[20px]
- md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
-      >
+      <GridContainer>
         {stores?.length > 0 &&
           stores?.map((s) => {
             return <StoryItem key={s.id} story={s} />;
           })}
-      </div>
+      </GridContainer>
     </div>
   );
 }

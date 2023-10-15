@@ -11,6 +11,7 @@ import {
 import CreatorsItem from "./CreatorsItem";
 import SectionHead from "../SectionHead";
 import Navigation from "../Navigation";
+import GridContainer from "../GridContainer";
 
 function CreatorsList() {
   const [page, setPage] = useState(1);
@@ -49,15 +50,12 @@ function CreatorsList() {
         />
       </div>
 
-      <div
-        className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[20px]
-    pb-[20px] md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
-      >
+      <GridContainer>
         {creators?.length > 0 &&
           creators.map((el) => {
             return <CreatorsItem key={el.id} data={el} />;
           })}
-      </div>
+      </GridContainer>
     </div>
   );
 }
