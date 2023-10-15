@@ -11,9 +11,13 @@ function StorySingle() {
   const { data, loading } = useFetch(`stores/${id}`);
 
   if (loading) return <Loader />;
+
+  // If id wrong
+  if (!data?.id) return <Empty message="Story Not Found" />;
+
   const { image_background, name, domain, description } = data || {};
 
-  return data?.id ? (
+  return (
     <div className="container mx-auto min-h-[80vh] px-[20px] pb-[20px] text-textColor">
       <div className="flex flex-col items-start gap-[20px] md:flex-row">
         <div className="w-full md:w-[50%]">
@@ -35,8 +39,6 @@ function StorySingle() {
         </div>
       </div>
     </div>
-  ) : (
-    <Empty message="Story Not Found" />
   );
 }
 

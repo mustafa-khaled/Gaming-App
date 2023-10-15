@@ -43,7 +43,8 @@ function GameSingle() {
   )
     return <Loader />;
 
-  if (!id) return <Empty message={"Failed To Fetch Game Data."} />;
+  // If the id wrong
+  if (!data?.id) return <Empty message={"Game Not Found."} />;
 
   const {
     background_image,
@@ -57,7 +58,7 @@ function GameSingle() {
 
   const displayImage = mainImage || background_image;
 
-  return data?.id ? (
+  return (
     <div className="container mx-auto min-h-[100vh] px-[20px] pb-[20px]">
       <div className="flex flex-col items-start gap-[20px] md:flex-row">
         <div className="relative w-full md:w-[50%]">
@@ -162,8 +163,6 @@ function GameSingle() {
       <SameSeries data={sameSeries?.results} />
       <DevelopmentTeam data={developmentTeam?.results} />
     </div>
-  ) : (
-    <Empty message="Game Not Found" />
   );
 }
 

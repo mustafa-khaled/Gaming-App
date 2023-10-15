@@ -24,19 +24,18 @@ function CreatorsList() {
     dispatch(fetchAsyncCreators(page));
   }, [page, dispatch]);
 
-  if (loading) return <Loader />;
-
-  if (error) return <Empty message={"Failed To Fetch Creators Data."} />;
-
   const handleNextPage = () => {
-    setPage((prevPage) => prevPage + 1);
+    setPage((p) => p + 1);
   };
 
   const handlePrevPage = () => {
     if (page > 1) {
-      setPage((prevPage) => prevPage - 1);
+      setPage((p) => p - 1);
     }
   };
+
+  if (loading) return <Loader />;
+  if (error) return <Empty message={"Failed To Fetch Creators Data."} />;
 
   return (
     <div>

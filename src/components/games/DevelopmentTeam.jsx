@@ -8,7 +8,9 @@ function DevelopmentTeam({ data }) {
   return (
     data?.length > 0 && (
       <div className="my-[30px] text-textColor">
-        <SectionHead title="Development Team" />
+        <div className="mb-[30px]">
+          <SectionHead title="Development Team" />
+        </div>
 
         <Swiper>
           {data?.map((el) => {

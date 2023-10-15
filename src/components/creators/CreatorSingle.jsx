@@ -12,11 +12,12 @@ function CreatorSingle() {
   const { data, loading } = useFetch(`creators/${id}`);
 
   if (loading) return <Loader />;
+
+  // If the id wrong
+  if (!data?.id) return <Empty message="Creator Not Found." />;
+
   const { image, name, description } = data || {};
-
-  console.log(data);
-
-  return data?.id ? (
+  return (
     <div className="container mx-auto min-h-[100vh] px-[20px] pb-[20px] text-textColor">
       <div className="flex flex-col items-start gap-[20px] md:flex-row">
         <div className="w-full md:w-[50%]">
@@ -30,8 +31,6 @@ function CreatorSingle() {
         </div>
       </div>
     </div>
-  ) : (
-    <Empty message="Creator Not Found" />
   );
 }
 
