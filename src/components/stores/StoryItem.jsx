@@ -5,7 +5,7 @@ function StoryItem({ story }) {
   const { image_background, name, id } = story;
 
   return (
-    <div>
+    <div className="mx-auto">
       <Img
         src={image_background}
         alt={name}

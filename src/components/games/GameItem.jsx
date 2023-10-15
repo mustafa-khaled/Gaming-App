@@ -7,7 +7,7 @@ function GameItem({ game }) {
   const { name, background_image, id, released, genres } = game;
 
   return (
-    <div className="text-sm text-gray-400">
+    <div className="mx-auto  text-sm text-gray-400">
       <div>
         <Img
           src={background_image}
